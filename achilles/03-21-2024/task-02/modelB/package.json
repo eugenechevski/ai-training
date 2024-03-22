@@ -1,0 +1,15 @@
+{
+  "name": "modelb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "modelB.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1583.0",
+    "c3": "^0.7.20"
+  }
+}
