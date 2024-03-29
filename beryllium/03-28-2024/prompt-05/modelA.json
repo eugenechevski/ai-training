@@ -1,0 +1,44 @@
+{
+    "$schema" : "http://json-schema.org/draft-07/schema#",
+    "type" : "array",
+    "items" : {
+      "type" : "object",
+      "properties" : {
+        "vehicleId" : {
+          "type" : "integer"
+        },
+        "make" : {
+          "type" : "string"
+        },
+        "model" : {
+          "type" : "string"
+        },
+        "year" : {
+          "type" : "integer"
+        },
+        "specifications" : {
+          "type" : "object",
+          "properties" : {
+            "engineType" : {
+              "type" : "string"
+            },
+            "horsepower" : {
+              "type" : "integer"
+            },
+            "fuelType" : {
+              "type" : "string"
+            }
+          },
+          "required" : ["engineType", "horsepower", "fuelType"]
+        },
+        "price" : {
+          "type" : "number"
+        },
+        "currentStatus" : {
+          "type" : "string",
+          "enum" : ["available", "sold", "maintenance"]
+        }
+      },
+      "required" : ["vehicleId", "make", "model", "year", "specifications", "price", "currentStatus"]
+    }
+  }

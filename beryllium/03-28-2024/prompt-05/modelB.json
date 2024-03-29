@@ -1,0 +1,50 @@
+{
+    "$schema" : "http://json-schema.org/draft-07/schema#",
+    "type" : "array",
+    "items" : {
+      "type" : "object",
+      "properties" : {
+        "vehicleId" : {
+          "type" : "string",
+          "pattern" : "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+        },
+        "make" : {
+          "type" : "string"
+        },
+        "model" : {
+          "type" : "string"
+        },
+        "year" : {
+          "type" : "integer",
+          "minimum" : 1900,
+          "maximum" : 2023
+        },
+        "specifications" : {
+          "type" : "object",
+          "properties" : {
+            "engineType" : {
+              "type" : "string"
+            },
+            "horsepower" : {
+              "type" : "integer",
+              "minimum" : 0
+            },
+            "fuelType" : {
+              "type" : "string",
+              "enum" : ["gasoline", "diesel", "electric", "hybrid"]
+            }
+          },
+          "required" : ["engineType", "horsepower", "fuelType"]
+        },
+        "price" : {
+          "type" : "number",
+          "minimum" : 0
+        },
+        "currentStatus" : {
+          "type" : "string",
+          "enum" : ["available", "sold", "maintenance"]
+        }
+      },
+      "required" : ["vehicleId", "make", "model", "year", "specifications", "price", "currentStatus"]
+    }
+  }
