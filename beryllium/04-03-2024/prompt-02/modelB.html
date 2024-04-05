@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Star Map Widget</title>
+    <style>
+        #star-map {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Star Map Widget</h1>
+    <div id="star-map"></div>
+
+    <script>
+        // Function to get the user's location
+        function getLocation() {
+            return new Promise((resolve, reject) => {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(position => {
+                        resolve({
+                            latitude: position.coords.latitude,
+                            longitude: position.coords.longitude
+                        });
+                    }, error => {
+                        reject(error);
+                    });
+                } else {
+                    reject(new Error("Geolocation is not supported by this browser."));
+                }
+            });
+        }
+
+        // Function to get the current date
+        function getDate() {
+            const date = new Date();
+            return {
+                year: date.getFullYear(),
+                month: date.getMonth() + 1,
+                day: date.getDate(),
+                hours: date.getHours(),
+                minutes: date.getMinutes(),
+                seconds: date.getSeconds()
+            };
+        }
+
+        // Function to calculate the position of the stars (for simplicity, we will use a fixed dataset of stars)
+        function getStarPositions() {
+            // Sample dataset of stars with their coordinates and names
+            const stars = [
+                { name: "Sirius", x: 100, y: 100 },
+                { name: "Procyon", x: 200, y: 200 },
+                // Add more stars here...
+            ];
+
+            return stars;
+        }
+
+        // Function to draw the star map
+        function drawStarMap(stars) {
+            const starMap = document.getElementById("star-map");
+            const canvas = document.createElement("canvas");
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            starMap.appendChild(canvas);
+
+            const ctx = canvas.getContext("2d");
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            stars.forEach(star => {
+                ctx.fillStyle = "white";
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, 5, 0, Math.PI * 2, true);
+                ctx.closePath();
+                ctx.fill();
+
+                ctx.fillStyle = "red";
+                ctx.font = "14px Arial";
+                ctx.fillText(star.name, star.x + 10, star.y - 10);
+            });
+        }
+
+        // Main function to fetch location and date, then draw the star map
+        function main() {
+            Promise.all([getLocation(), getDate()]).then(results => {
+                const location = results[0];
+                const date = results[1];
+                // You can use location and date to calculate the position of the stars and constellations
+                // For simplicity, we will use a fixed dataset of stars
+                const stars = getStarPositions();
+                drawStarMap(stars);
+            }).catch(error => {
+                console.error("Error:", error.message);
+            });
+        }
+
+        // Call the main function when the document is ready
+        document.addEventListener("DOMContentLoaded", main);
+    </script>
+</body>
+
+</html>

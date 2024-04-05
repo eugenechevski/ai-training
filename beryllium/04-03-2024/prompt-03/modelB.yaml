@@ -1,0 +1,78 @@
+oxygen_generation:
+  type: electrolysis
+  output_rate: 200L/hr  # Oxygen output rate in liters per hour
+  energy_requirement: 5KW  # Energy requirement in kilowatts
+
+
+water_recycling:
+  type: distillation
+  input_source: wastewater
+  output_rate: 100L/hr  # Water output rate in liters per hour
+  energy_requirement: 3KW  # Energy requirement in kilowatts
+
+
+food_production:
+  type: vertical_farm
+  crop_varieties: [potatoes, wheat, soybeans, tomatoes]  # List of crop varieties to grow
+  output_rate: 500g/hr  # Food output rate in grams per hour
+  energy_requirement: 4KW  # Energy requirement in kilowatts
+
+
+waste_management:
+  type: composting
+  input_source: food_waste
+  output_rate: 50kg/day  # Waste output rate in kilograms per day
+  energy_requirement: 2KW  # Energy requirement in kilowatts
+
+
+alerts:
+  low_oxygen: 20%  # Threshold for low oxygen alert
+  low_water: 20%  # Threshold for low water alert
+  low_food: 10%  # Threshold for low food alert
+
+
+maintenance_schedules:
+  oxygen_generation: every_6_months  # Schedule for oxygen generation maintenance
+  water_recycling: every_3_months  # Schedule for water recycling maintenance
+  food_production: every_month  # Schedule for food production maintenance
+  waste_management: every_2_months  # Schedule for waste management maintenance
+
+
+Sample Configuration:
+This sample configuration reflects a balance necessary to support a crew of six for one Martian year. The specific values may need to be adjusted based on various factors such as the size of the colony, the type of crops grown, and the amount of waste generated.
+
+
+oxygen_generation:
+  output_rate: 280L/hr
+  energy_requirement: 6KW
+
+
+water_recycling:
+  input_source: wastewater
+  output_rate: 120L/hr
+  energy_requirement: 4KW
+
+
+food_production:
+  crop_varieties: [potatoes, wheat, soybeans, tomatoes]
+  output_rate: 700g/hr
+  energy_requirement: 5KW
+
+
+waste_management:
+  input_source: food_waste
+  output_rate: 70kg/day
+  energy_requirement: 3KW
+
+
+alerts:
+  low_oxygen: 18%
+  low_water: 15%
+  low_food: 8%
+
+
+maintenance_schedules:
+  oxygen_generation: every_5_months
+  water_recycling: every_3_months
+  food_production: every_month
+  waste_management: every_2_months

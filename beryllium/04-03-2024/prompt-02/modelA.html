@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Map Widget</title>
+    <style>
+        #star-map {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            background-color: #000;
+        }
+
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: #fff;
+        }
+
+        .constellation {
+            position: absolute;
+            font-size: 12px;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="star-map"></div>
+
+    <script>
+        // Sample star dataset
+        const stars = [
+            { name: "Sirius", magnitude: 1.46, rightAscension: 6.4516, declination: -16.7161 },
+            { name: "Canopus", magnitude: 0.72, rightAscension: 0.6283, declination: -52.6883 },
+            // Add more stars here...
+        ];
+
+        // Sample constellation dataset
+        const constellations = [
+            { name: "Orion", stars: ["Betelgeuse", "Rigel", "Procyon"] },
+            { name: "Taurus", stars: ["Aldebaran", "Hyades"] },
+            // Add more constellations here...
+        ];
+
+        // Function to convert degrees to radians
+        function toRadians(degrees) {
+            return (degrees * Math.PI) / 180;
+        }
+
+        // Function to get the user's location and current date
+        async function getUserLocationAndDate() {
+            const position = await new Promise((resolve, reject) => {
+                navigator.geolocation.getCurrentPosition(resolve, reject);
+            });
+
+            const date = new Date();
+
+            return { latitude: position.coords.latitude, longitude: position.coords.longitude, date };
+        }
+
+        // Function to calculate the sidereal time
+        function getSiderealTime(longitude, date) {
+            const utc = date.getUTCHours() + date.getUTCMinutes() / 60 + date.getUTCSeconds() / 3600;
+            const lst = 100.46 + 0.985647 * utc + longitude;
+            return lst % 24;
+        }
+
+        // Function to convert equatorial coordinates to horizontal coordinates
+        function equatorialToHorizontal(rightAscension, declination, latitude, siderealTime) {
+            const hourAngle = siderealTime * 15 - rightAscension * 15;
+            const altitude = Math.sin(toRadians(declination)) * Math.sin(toRadians(latitude)) + Math.cos(toRadians(declination)) * Math.cos(toRadians(latitude)) * Math.cos(toRadians(hourAngle));
+            const azimuth = Math.atan2(Math.sin(toRadians(hourAngle)), Math.cos(toRadians(hourAngle)) * Math.sin(toRadians(latitude)) - Math.tan(toRadians(declination)) * Math.cos(toRadians(latitude)));
+
+            return { altitude: altitude * 180 / Math.PI, azimuth: azimuth * 180 / Math.PI };
+        }
+
+        // Function to draw the star map
+        async function drawStarMap() {
+            const { latitude, longitude, date } = await getUserLocationAndDate();
+            const siderealTime = getSiderealTime(longitude, date);
+
+            const starMap = document.getElementById("star-map");
+            starMap.innerHTML = "";
+
+            // Draw stars
+            stars.forEach((star) => {
+                const { altitude, azimuth } = equatorialToHorizontal(star.rightAscension, star.declination, latitude, siderealTime);
+
+                if (altitude > 0) {
+                    const starElement = document.createElement("div");
+                    starElement.classList.add("star");
+                    starElement.style.left = (azimuth / 360) * 100 + "%";
+                    starElement.style.top = (1 - altitude / 90) * 100 + "%";
+                    starElement.title = star.name;
+                    starMap.appendChild(starElement);
+                }
+            });
+
+            // Draw constellations
+            constellations.forEach((constellation) => {
+                const constellationStars = constellation.stars.map((starName) => stars.find((star) => star.name === starName)).filter((star) => star);
+
+                if (constellationStars.length > 0) {
+                    const minAzimuth = Math.min(...constellationStars.map((star) => star.azimuth));
+                    const maxAzimuth = Math.max(...constellationStars.map((star) => star.azimuth));
+                    const meanAzimuth = (minAzimuth + maxAzimuth) / 2;
+
+                    const minAltitude = Math.min(...constellationStars.map((star) => star.altitude));
+                    const maxAltitude = Math.max(...constellationStars.map((star) => star.altitude));
+                    const meanAltitude = (minAltitude + maxAltitude) / 2;
+
+                    const constellationElement = document.createElement("div");
+                    constellationElement.classList.add("constellation");
+                    constellationElement.style.left = (meanAzimuth / 360) * 100 + "%";
+                    constellationElement.style.top = (1 - meanAltitude / 90) * 100 + "%";
+                    constellationElement.textContent = constellation.name;
+                    starMap.appendChild(constellationElement);
+                }
+            });
+        }
+
+        // Call the drawStarMap function when the page is loaded
+        drawStarMap();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+oxygen_generation:
+  type: electrochemical
+  co2_scrubber_efficiency: 80%
+  energy_requirement: 500 kW
+  oxygen_production_rate: 1000 L/hour
+
+
+water_recycling:
+  type: membrane
+  freshwater_production_rate: 500 L/hour
+  wastewater_consumption_rate: 300 L/hour
+  energy_requirement: 200 kW
+
+
+food_production:
+  type: vertical_farm
+  crop_yield: 400 kg/month
+  energy_requirement: 300 kW
+  area_requirement: 200 m2
+
+
+waste_management:
+  type: composting
+  waste_production_rate: 200 kg/day
+  compost_production_rate: 100 kg/day
+  energy_requirement: 100 kW
+
+
+thresholds:
+  oxygen_level:
+    critical: 15%
+    warning: 20%
+  water_level:
+    critical: 15%
+    warning: 20%
+  food_supply:
+    critical: 3 days
+    warning: 5 days
+  waste_level:
+    critical: 80%
+    warning: 90%
+
+
+maintenance_schedules:
+  oxygen_generation:
+    interval: 6 months
+    duration: 2 days
+  water_recycling:
+    interval: 3 months
+    duration: 3 days
+  food_production:
+    interval: 4 months
+    duration: 4 days
+  waste_management:
+    interval: 2 months
+    duration: 5 days

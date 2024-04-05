@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "clue": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9]+$"
+    },
+    "encryptionKey": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 25
+    },
+    "nextClue": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9]+$"
+    }
+  },
+  "required": ["clue", "encryptionKey", "nextClue"]
+}
