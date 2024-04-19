@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "plant_species": {
+      "description": "Name of the plant species",
+      "type": "string",
+      "example": "Ficus Lyrata"
+    },
+    "watering_frequency": {
+      "description": "Frequency of watering in days",
+      "type": "integer",
+      "minimum": 1
+    },
+    "fertilizer_schedule": {
+      "description": "Fertilization schedule in weeks",
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "uniqueItems": true
+    },
+    "last_pruned_date": {
+      "description": "Date of the last pruning",
+      "type": "string",
+      "format": "date"
+    },
+    "additional_care_info": {
+      "description": "Any additional notes or care instructions",
+      "type": "string"
+    }
+  },
+  "required": ["plant_species", "watering_frequency"]
+}
+

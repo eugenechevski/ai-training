@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "plant_species": {
+      "type": "string",
+      "description": "The species of the plant"
+    },
+    "watering_frequency": {
+      "type": "object",
+      "properties": {
+        "quantity": {
+          "type": "integer",
+          "description": "Amount of water in milliliters or cups"
+        },
+        "time_interval": {
+          "type": "string",
+          "pattern": "^[0-9]+[dDwW]?$",
+          "description": "The frequency of watering in days (D) or weeks (W). For example, 2D or 1W."
+        }
+      },
+      "required": ["quantity", "time_interval"]
+    },
+    "fertilizer_schedule": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fertilizer_type": {
+            "type": "string",
+            "description": "Type of fertilizer used"
+          },
+          "application_date": {
+            "type": "string",
+            "format": "date",
+            "description": "The date the fertilizer was applied"
+          },
+          "next_application": {
+            "type": "string",
+            "format": "date",
+            "description": "Recommended date for the next fertilizer application"
+          }
+        },
+        "required": ["fertilizer_type", "application_date", "next_application"]
+      }
+    },
+    "last_pruned_date": {
+      "type": "string",
+      "format": "date",
+      "description": "The date the plant was last pruned"
+    }
+  },
+  "required": ["plant_species", "watering_frequency"]
+}
