@@ -1,0 +1,5 @@
+Hello, welcome to the sample text file.
+This is the second line.
+Here is line number three.
+The fourth line is as simple as the first.
+Finally, this is the fifth and last line.
