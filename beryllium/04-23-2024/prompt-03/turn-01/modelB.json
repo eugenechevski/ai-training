@@ -1,0 +1,125 @@
+{
+    "$schema" :"http://json-schema.org/draft-07/schema#",
+    "type" : "object",
+    "properties": {
+        "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date and time of the data collection"
+        },
+        "location": {
+            "type": "object",
+            "properties": {
+                "longitude": {
+                    "type": "number",
+                    "description": "Longitude of the location"
+                },
+                "latitude": {
+                    "type": "number",
+                    "description": "Latitude of the location"       
+                }
+            },
+            "required": ["longitude", "latitude"]
+        },       
+        "vehicleCounts": {
+            "type": "object",
+            "properties": {
+                "total": {
+                    "type": "integer",
+                    "description": "Total number of vehicles detected"     
+                },
+                "cars": {
+                    "type": "integer",
+                    "description": "Number of cars detected"
+                },
+                "trucks": {
+                    "type": "integer",
+                    "description": "Number of trucks detected"
+                },
+                "motorcycles": {
+                    "type": "integer",
+                    "description": "Number of motorcycles detected"
+                }
+            },
+            "required": ["total", "cars", "trucks", "motorcycles"]
+        },
+        "speedAverages": {
+            "type": "object",
+            "properties": {
+                "overall": {
+                    "type": "number",
+                    "description": "Overall average speed of all vehicles"      
+                },
+                "cars": {
+                    "type": "number",
+                    "description": "Average speed of cars"
+                },
+                "trucks": {
+                    "type": "number",
+                    "description": "Average speed of trucks"
+                },
+                "motorcycles": {
+                    "type": "number",
+                    "description": "Average speed of motorcycles"
+                }
+            },  
+            "required": ["overall", "cars", "trucks", "motorcycles"]
+        },
+        "incidentReports": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "Type of incident (e.g., accident, breakdown, congestion)"     
+                    },
+                    "location": {
+                        "type": "object",
+                        "properties": {
+                            "longitude": {
+                                "type": "number"       
+                            },
+                            "latitude": {
+                                "type": "number"       
+                            }
+                        },
+                        "required": ["longitude", "latitude"]
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Short description of the incident"
+                    }
+                },
+                "required": ["type", "location"]
+            }    
+        },      
+        "weatherConditions": {
+            "type": "object",
+            "properties": {
+                "temperature": {
+                    "type": "number",
+                    "description": "Temperature in degrees Celsius"     
+                },
+                "humidity": {
+                    "type": "integer",
+                    "description": "Humidity percentage"
+                },
+                "precipitation": {
+                    "type": "number",
+                    "description": "Precipitation amount in millimeters"
+                },
+                "windSpeed": {
+                    "type": "number",
+                    "description": "Wind speed in km/h"
+                },
+                "condition": {
+                    "type": "string",
+                    "description": "Weather condition (e.g., sunny, cloudy, rainy)"
+                }
+            },  
+            "required": ["temperature", "humidity", "precipitation", "windSpeed", "condition"]
+        }
+    },
+    "required": ["timestamp", "location", "vehicleCounts", "speedAverages", "weatherConditions"]
+}

@@ -1,0 +1,1 @@
+Design a JSON schema for a dashboard that visualizes traffic data. The schema should include fields for vehicle counts, speed averages, incident reports, and weather conditions. Provide a sample JSON entry that represents data collected over a one-hour period on a busy highway.

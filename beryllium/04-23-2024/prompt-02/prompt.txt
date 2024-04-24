@@ -1,0 +1,1 @@
+Develop a Python script that simulates a simple banking system. The script should allow for adding new accounts, updating existing account balances, and transferring money between accounts. Use classes to represent accounts and transactions.
