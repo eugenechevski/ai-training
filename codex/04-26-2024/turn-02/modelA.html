@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Model A</title>
+</head>
+
+<body>
+    <div>
+        <p>
+            <button>Click Me!</button>
+        </p>
+    </div>
+    <script>
+        const div = document.querySelector('div');
+        const p = document.querySelector('p');
+        const button = document.querySelector('button');
+
+        button.addEventListener('click', () => {
+            console.log('Button clicked!');
+        });
+
+        p.addEventListener('click', () => {
+            console.log('Paragraph clicked!');
+        });
+
+        div.addEventListener('click', () => {
+            console.log('Div clicked!');
+        });
+        document.querySelector('button').addEventListener('click', function (event) {
+            console.log('Button clicked!');
+            event.stopPropagation(); // Prevents bubbling to parent elements
+        });
+    </script>
+</body>
+
+</html>
