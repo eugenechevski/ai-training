@@ -1,0 +1,6 @@
+date,time,latitude,longitude,depth,magnitude,location,casualties,economic damage,rescue operations initiated,aid received
+2020-01-05,14:23:18,38.2472,-122.6345,18.3,7.1,"Mendocino County, CA",120,2350000000,Yes,Yes
+2019-04-18,06:56:12,-5.8765,-73.5678,25.0,8.0,"Ecuador-Peru Border Region","1500",3500000000,Yes,Yes
+2016-08-12,21:48:27,14.0567,120.6789,12.2,6.4,"Taiwan","360",180000000,Yes,No
+2021-02-20,09:34:56,-22.1234,-64.7890,10.1,5.6,"Argentina-Bolivia Border Region","480",70000000,No,Yes
+2018-10-29,17:15:45,36.1234,138.2345,22.5,7.8,"Off the coast of Honshu, Japan","2700",5000000000,Yes,Yes

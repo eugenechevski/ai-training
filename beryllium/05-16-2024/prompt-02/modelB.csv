@@ -1,0 +1,6 @@
+date,time,latitude,longitude,depth,magnitude,location,casualties,economic damage,rescue operations initiated,aid received
+2023-08-03,12:23:45,35.6489,-120.4567,14.0,8.0,"San Luis Obispo, CA",500,2500000000,Yes,Yes
+2023-08-04,06:58:12,-45.2345,152.7890,22.5,7.9,"Brisbane, Australia",1300,100000000,Yes,Yes
+2023-08-06,02:14:56,46.8765,10.4567,3.6,4.4,"Vienna, Austria",25,7000000,No,Yes
+2023-08-07,21:57:32,-37.2345,-108.4567,7.8,5.6,"Albuquerque, NM",380,18000000,Yes,No
+2023-08-08,15:43:21,32.5678,-16.4567,9.2,7.2,"Praia, Cape Verde",20,3000000,No,No

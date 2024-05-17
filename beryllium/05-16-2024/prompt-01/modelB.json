@@ -1,0 +1,95 @@
+{
+  "playlist_id": "1", // Unique identifier for the playlist
+  "playlist_name": "Chill Vibes", // Name of the playlist
+  "creator": "XYZ", // Name of the user/creator of the playlist
+  "creation_date": "2023-07-28T00:00:00Z", // ISO 8601 format date of creation
+  "description": "A collection of mellow tunes for relaxation", // Description of the playlist (optional)
+  "songs": [
+    {
+      "song_id": "101", // Unique identifier for the song
+      "title": "Song Title 1", // Title of the song
+      "artist": "Artist Name 1", // Name of the song artist
+      "album": "Album Title 1", // Name of the album
+      "duration": "180", // Song duration in seconds
+      "genre": "Pop", // Genre of the song
+      "release_date": "2022-01-01", // Date of the song's release (optional)
+      "popularity": 85, // Popularity of the song (optional)
+      "interactions": [
+        {
+          "user_id": "user1",
+          "interaction_type": "like",
+          "interaction_date": "2023-08-01T12:34:56Z",
+          "comments": [
+            {
+              "comment_id": "1001",
+              "user_id": "user1",
+              "comment_text": "Great song!",
+              "timestamp": "2023-08-01T12:34:56Z"
+            },
+            {
+              "comment_id": "1002",
+              "user_id": "user2",
+              "comment_text": "Love the beat!",
+              "timestamp": "2023-08-01T13:45:01Z"
+            }
+          ]
+        },
+        {
+          "user_id": "user2",
+          "interaction_type": "share",
+          "interaction_date": "2023-08-02T09:12:34Z"
+        }
+      ]
+    },
+    {
+      "song_id": "102",
+      "title": "Song Title 2",
+      "artist": "Artist Name 2",
+      "album": "Album Title 2",
+      "duration": "240",
+      "genre": "Rock",
+      "explicit": true, // Indicates whether the song is explicit (optional)
+      "interactions": [
+        {
+          "user_id": "user3",
+          "interaction_type": "like",
+          "interaction_date": "2023-08-03T18:23:45Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "song_id": "103",
+      "title": "Song Title 3",
+      "artist": ["Artist Name 3", "Feature Artist Name 3"], // Support for featuring artists
+      "album": "Album Title 3",
+      "duration": "160",
+      "genre": "Hip-Hop",
+      "interactions": []
+    },
+
+    {
+      "song_id": "...",
+      "title": "...",
+      "artist": "...",
+      "album": "...",
+      "duration": "...",
+      "genre": "..."
+    }
+  ],
+  "image_url": "https://example.com/playlist-image.jpg", // Url of the playlist art (optional)
+  "total_tracks": 10, // Total number of tracks in the playlist (optional)
+  "followers": 123, // Number of followers for the playlist (optional)
+  "interactions": [
+    {
+      "user_id": "user1",
+      "interaction_type": "follow",
+      "interaction_date": "2023-08-01T15:43:21Z"
+    },
+    {
+      "user_id": "user2",
+      "interaction_type": "share",
+      "interaction_date": "2023-08-02T11:22:10Z"
+    }
+  ]
+}

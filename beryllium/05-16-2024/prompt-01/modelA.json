@@ -1,0 +1,66 @@
+{
+  "playlist_id": "1",
+  "playlist_name": "Chill Vibes",
+  "creator": "XYZ",
+  "creation_date": "2023-07-28T00:00:00Z",
+  "description": "A collection of mellow tunes for relaxation",
+  "songs": [
+    {
+      "song_id": "101",
+      "title": "Song Title 1",
+      "artist": "Artist Name 1",
+      "album": "Album Title 1",
+      "duration": "180",
+      "genre": "Pop",
+      "interactions": [
+        {
+          "user_id": "user456",
+          "interaction_type": "like",
+          "interaction_date": "2023-08-05T14:32:10Z",
+          "comment": [] // Comments will be empty if there are no comments for this interaction
+        },
+        {
+          "user_id": "user789",
+          "interaction_type": "share",
+          "interaction_date": "2023-08-03T12:15:30Z",
+          "comment": []
+        },
+        {
+          "user_id": "user123",
+          "interaction_type": "comment",
+          "interaction_date": "2023-08-02T09:38:45Z",
+          "comments": [
+            // Nested list of comments
+            {
+              "comment_id": "comment_111",
+              "user_id": "user123",
+              "comment_text": "This song is fire!",
+              "timestamp": "2023-08-02T09:38:45Z"
+            },
+            {
+              "comment_id": "comment_112",
+              "user_id": "user789",
+              "comment_text": "Indeed! Perfect for studying.",
+              "timestamp": "2023-08-02T10:15:00Z"
+            }
+          ]
+        }
+      ],
+      "image_url": "https://example.com/playlist-image.jpg",
+      "total_tracks": 4,
+      "followers": 123
+    },
+    {
+      "song_id": "...",
+      "title": "...",
+      "artist": "...",
+      "album": "...",
+      "duration": "...",
+      "genre": "..."
+    }
+  ],
+  "collaborators": ["user567", "user876"], // List of collaborator user IDs (optional)
+  "total_interactions": 345, // Total count of all interactions on the playlist (optional)
+  "total_likes": 180, // Total count of likes on the playlist (optional)
+  "total_shares": 105 // Total count of shares on the playlist (optional)
+}
