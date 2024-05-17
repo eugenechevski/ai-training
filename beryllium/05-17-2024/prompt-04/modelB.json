@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "property_type": "House",
+    "address": "123 Main Street",
+    "price": 200000,
+    "size": 1500,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "amenities": ["Swimming Pool", "Gym"],
+    "agent_contact": {
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "phone": "123-456-7890"
+    }
+  },
+  {
+    "id": "2",
+    "property_type": "Condo",
+    "address": "456 Elm Street",
+    "price": 300000,
+    "size": 1000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "amenities": ["Gym"],
+    "agent_contact": {
+      "name": "Jane Smith",
+      "email": "janesmith@example.com",
+      "phone": "123-456-7891"
+    }
+  }
+]

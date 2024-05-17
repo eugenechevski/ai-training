@@ -1,0 +1,5 @@
+"Patient ID","Name","Age","Gender","Diagnosis","Treatment Plan","Admission Date","Discharge Date","Attending Physician","Follow-up Appointment"
+"101","Emily Parker","32","Female","Acute Lymphoblastic Leukemia (ALL)","Chemotherapy, Immunotherapy","7/25/2023","8/15/2023","Dr. Amelia Hart","9/15/2023 10:00 AM"
+"102","James Collins","67","Male","Broken Right Hip","Orthopedic surgery, Physical Therapy","8/10/2023","8/20/2023","Dr. Marcus Johnson","8/30/2023 3:00 PM"
+"103","Sophia Rodriguez","16","Female","Appendicitis","Appendectomy, Antibiotics","9/1/2023","9/3/2023","Dr. Lily Patel","-"
+"104","Michael Roberts","45","Male","Sinus Infection","Antibiotics, Decongestants","9/5/2023","9/7/2023","Dr. Victor Lee","10/5/2023 8:00 AM"

@@ -1,0 +1,5 @@
+"Patient ID","Name","Age","Gender","Diagnosis","Treatment Plan","Admission Date","Discharge Date","Attending Physician","Follow-up Appointment"
+"101","Emily Parker","32","F","Acute Lymphoblastic Leukemia (ALL)","Chemotherapy, Immunotherapy","7/25/2023","8/15/2023","Dr. Amelia Hart","9/15/2023, 2:00 PM"
+"102","James Collins","67","M","Broken Right Hip","Orthopedic surgery, Physical Therapy","8/10/2023","8/20/2023","Dr. Marcus Johnson","9/20/2023, 1:30 PM"
+"103","Liam Martinez","19","M","Concussion","Rest, Neurological Evaluation","8/5/2023","8/7/2023","Dr. Sofia Rodriguez","8/17/2023, 3:00 PM"
+"104","Ava Roberts","45","F","Pregnancy Complications","Antenatal care, Delivery","7/15/2023","8/12/2023","Dr. Lily Thompson","8/25/2023, 10:00 AM","OBGYN"

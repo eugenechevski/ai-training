@@ -1,0 +1,26 @@
+{
+  "listingID": "string",
+  "propertyType": "string", //e.g. 'House', 'Apartment', 'Condo', 'Townhouse'
+  "address": {
+    "street": "string",
+    "city": "string",
+    "state": "string",
+    "zip": "string",
+    "country": "string"
+  },
+  "price": 0,
+  "size": 0, //in square units (e.g. square meters or square feet)
+  "bedrooms": 0,
+  "bathrooms": 0,
+  "aminiities": ["string"], //e.g. 'Swimming Pool', 'Gym', 'Balcony', 'Parking'
+  "agentContactInfo": {
+    "name": "string",
+    "phone": "string",
+    "email": "string",
+    "licenseNumber": "string"
+  },
+  "images": ["string"], //URLs of the property images
+  "description": "string",
+  "latitude": 0, //Geographical coordinates
+  "longitude": 0
+}
