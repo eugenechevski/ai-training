@@ -1,0 +1,121 @@
+Here is a simple example of how you can create this application using HTML, CSS, and JavaScript.
+
+HTML:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Missions</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Space Missions</h1>
+  </header>
+  <main>
+    <section class="filter-container">
+      <label for="filter">Filter by status:</label>
+      <select id="filter" onchange="filterMissions()">
+        <option value="all">All</option>
+        <option value="launched">Launched</option>
+        <option value="completed">Completed</option>
+      </select>
+    </section>
+    <section class="missions-container">
+      <ul id="missions-list"></ul>
+    </section>
+    <section class="add-mission-container">
+      <form onsubmit="addMission(event)">
+        <input type="text" id="mission-name" placeholder="Enter mission name">
+        <textarea id="mission-description" placeholder="Enter mission description"></textarea>
+        <button type="submit">Add Mission</button>
+      </form>
+    </section>
+    <section class="next-launch-container">
+      <p id="next-launch-countdown"></p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
+CSS (in styles.css file):
+
+body {
+  background-image: url('space-background.jpg');
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.filter-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.filter-container label {
+  margin-right: 10px;
+}
+
+.missions-container {
+  margin-top: 20px;
+}
+
+.missions-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.missions-container li {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.missions-container li:last-child {
+  border-bottom: none;
+}
+
+.add-mission-container {
+  margin-top: 20px;
+}
+
+.add-mission-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-mission-container input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.add-mission-container button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.next-launch-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.next-launch-container p {
+  font-size: 24px;
+  font-weight: bold;
+}

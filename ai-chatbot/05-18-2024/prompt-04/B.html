@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Missions</title>
+    <link rel="stylesheet" href="B.css">
+</head>
+
+<body>
+    <h1>Space Missions</h1>
+    <button id="add-mission-btn">Add Mission</button>
+    <div id="missions-container"></div>
+    <div id="filter-container">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="launched">Launched</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+    </div>
+    <div id="countdown-container">
+        <p>Next Launch: <span id="countdown-timer"></span></p>
+    </div>
+
+    <script src="B.js"></script>
+</body>
+
+</html>

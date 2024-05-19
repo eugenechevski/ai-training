@@ -1,0 +1,45 @@
+Here is a simple example of how you can create this application using HTML, CSS, and JavaScript.
+
+HTML:
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Missions</title>
+    <link rel="stylesheet" href="A.css">
+</head>
+
+<body>
+    <header>
+        <h1>Space Missions</h1>
+    </header>
+    <main>
+        <section class="filter-container">
+            <label for="filter">Filter by status:</label>
+            <select id="filter" onchange="filterMissions()">
+                <option value="all">All</option>
+                <option value="launched">Launched</option>
+                <option value="completed">Completed</option>
+            </select>
+        </section>
+        <section class="missions-container">
+            <ul id="missions-list"></ul>
+        </section>
+        <section class="add-mission-container">
+            <form onsubmit="addMission(event)">
+                <input type="text" id="mission-name" placeholder="Enter mission name">
+                <textarea id="mission-description" placeholder="Enter mission description"></textarea>
+                <button type="submit">Add Mission</button>
+            </form>
+        </section>
+        <section class="next-launch-container">
+            <p id="next-launch-countdown"></p>
+        </section>
+    </main>
+    <script src="A.js"></script>
+</body>
+
+</html>
