@@ -1,0 +1,39 @@
+{
+    "user_id": "123456",
+    "predicted_screen_time": 75,
+    "predicted_behaviors": [
+      {
+        "behavior": "scroll",
+        "probability": 0.8
+      },
+      {
+        "behavior": "like",
+        "probability": 0.2
+      },
+      {
+        "behavior": "comment",
+        "probability": 0.05
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "post",
+        "content": {
+          "post_id": "789",
+          "caption": "Summer vibes!",
+          "image_url": "https://example.com/image1.jpg",
+          "likes": 50,
+          "comments": 10
+        }
+      },
+      {
+        "type": "story",
+        "content": {
+          "story_id": "456",
+          "caption": "Behind the scenes",
+          "video_url": "https://example.com/video1.mp4",
+          "views": 200
+        }
+      }
+    ]
+  }
